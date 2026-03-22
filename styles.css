@@ -13,7 +13,7 @@
   --primary-950: #111d15;
 
   --neutral-50: #f8fafc;
-  --neutraly-100: #f1f5f9;
+  --neutral-100: #f1f5f9;
   --neutral-200: #e2e8f0;
   --neutral-300: #cbd5e1;
   --neutral-400: #94a3b8;
@@ -34,7 +34,7 @@
   --fs-base: 1rem;
   --fs-md: 1.125rem;
   --fs-lg: 1.25rem;
-  --fs-xl: 1.5;
+  --fs-xl: 1.5rem;
   --fs-2xl: 1.875rem;
   --fs-3xl: 2.25rem;
   --fs-4xl: 3rem;
@@ -152,6 +152,20 @@ a:hover {
   align-items: center;
   gap: var(--space-3);
 }
+label {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  width: 5px;
+  background-color: var(--primary-600);
+}
 /*COMPONENTS*/
 .btn__primary {
   padding: var(--space-3) var(--space-6);
@@ -226,15 +240,20 @@ a:hover {
   justify-content: space-between;
   padding: var(--space-6);
   border-radius: var(--radius-lg);
-  border: solid 1px var(--neutral-200);
+  border: solid 1px var(--neutral-100);
 
-  background-color: var(--neutral-100);
+  background-color: #ffffff;
 
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
 }
+.card__message {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
 .card:hover {
-  scale: 105%;
+  scale: 102%;
   box-shadow: var(--shadow-md);
 }
 .columns-3 {
@@ -323,7 +342,6 @@ body {
 
   cursor: pointer;
 }
-
 .section {
   display: flex;
   flex-direction: row;
@@ -364,7 +382,6 @@ body {
 .hero {
   background-color: var(--primary-50);
 }
-
 .hero__image {
   display: flex;
   flex-direction: row;
@@ -395,10 +412,74 @@ body {
 .about {
   background-color: var(--primary-50);
 }
+.gallery {
+  background-color: var(--primary-50);
+}
 /*FOOTER*/
 footer {
   background-color: var(--primary-50);
 }
+/*BLOG*/
+.main__blog__section {
+  background-color: var(--primary-50);
+}
+
+/*FORM*/
+.contact {
+  max-width: 1200px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form label {
+  font-size: var(--fs-sm);
+  color: var(--neutral-600);
+  font-weight: var(--fw-medium);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--neutral-200);
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+
+  transition: all 0.2s ease;
+}
+
+/* 🔥 foco bonito */
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 2px var(--primary-100);
+}
+
+/* 🔥 hover suave */
+.form input:hover,
+.form textarea:hover {
+  border-color: var(--primary-300);
+}
+
+/* botón full width en mobile */
+.form button {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
 @media (max-width: 768px) {
   /*HEADER*/
 
@@ -446,23 +527,27 @@ footer {
     transition-delay: 0.4s;
   }
 }
-@media (min-width: 550px) {
-  .btn__content {
-    flex-direction: row;
-    justify-content: center;
-    gap: var(--space-4);
-  }
-}
+
 @media (min-width: 768px) {
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+    gap: var(--space-8);
+  }
   .container {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: 1;
+    grid-template-rows: auto;
 
     align-items: center;
+    justify-content: center;
   }
+
   .btn__content {
+    flex-direction: row;
     justify-content: flex-start;
+    gap: var(--space-4);
   }
 }
 @media (min-width: 900px) {
@@ -470,5 +555,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
+  }
+  .btn__content {
+    justify-content: flex-start;
   }
 }
