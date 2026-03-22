@@ -205,6 +205,9 @@ a:hover {
 .color__primary-700 {
   color: var(--primary-700);
 }
+.color__neutral-500 {
+  color: var(--neutral-500);
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -232,6 +235,7 @@ a:hover {
 .text__decoration {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: var(--space-2);
 }
 .icon-sm svg {
