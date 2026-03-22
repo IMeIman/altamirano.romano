@@ -146,10 +146,15 @@ a:hover {
 .cursive {
   font-style: italic;
 }
-
+.justify__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3);
+}
 /*COMPONENTS*/
 .btn__primary {
-  padding: var(--space-2) var(--space-6);
+  padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-full);
   border-style: none;
 
@@ -202,11 +207,17 @@ a:hover {
 .color__primary-500 {
   color: var(--primary-500);
 }
+.color__primary-600 {
+  color: var(--primary-600);
+}
 .color__primary-700 {
   color: var(--primary-700);
 }
 .color__neutral-500 {
   color: var(--neutral-500);
+}
+.color__neutral-700 {
+  color: var(--neutral-700);
 }
 .card {
   display: flex;
@@ -386,7 +397,7 @@ body {
 }
 /*FOOTER*/
 footer {
-  background-color: var(--primary-500);
+  background-color: var(--primary-50);
 }
 @media (max-width: 768px) {
   /*HEADER*/
@@ -445,7 +456,7 @@ footer {
 @media (min-width: 768px) {
   .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
     grid-template-rows: 1;
 
     align-items: center;
